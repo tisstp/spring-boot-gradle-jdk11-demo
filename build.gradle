@@ -26,6 +26,7 @@ repositories {
 ext {
 	set('springBootVersion', "2.1.8.RELEASE")
 	set('lombokVersion', "1.18.10")
+	set('jupiterVersion', "5.5.2")
 }
 
 dependencies {
@@ -42,9 +43,13 @@ dependencies {
 
 	providedRuntime "org.springframework.boot:spring-boot-starter-tomcat:${springBootVersion}"
 	developmentOnly "org.springframework.boot:spring-boot-devtools:${springBootVersion}"
+
+	testImplementation "org.junit.jupiter:junit-jupiter:${jupiterVersion}"
 	testImplementation("org.springframework.boot:spring-boot-starter-test:${springBootVersion}") {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
+
+	testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${jupiterVersion}"
 }
 
 test {
