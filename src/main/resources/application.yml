@@ -11,3 +11,19 @@ spring:
     properties:
       hibernate:
         format_sql: true
+
+
+# for Controller
+SomeController:
+  findPetsByStatus:
+    notes: Finds pets by status
+    status: Status could be one of ...
+  operation2:
+    header1: Header for bla bla
+    value: Operation 2 do something ...
+
+# for Model
+SomeModel:
+  longProperty: Some property description ...
+  fristName: frist name property msg...
+  lastName: last name property msg...

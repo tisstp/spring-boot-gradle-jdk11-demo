@@ -1,4 +1,4 @@
-package com.tisstp.exgradle.demo.api.type;
+package com.tisstp.exgradle.demo.api.swag.type;
 
 /**
  * @author sathaphorn.stp (Tis)

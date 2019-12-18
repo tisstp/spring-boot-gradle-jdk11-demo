@@ -1,4 +1,4 @@
-package com.tisstp.exgradle.demo.api.controllers.swag;
+package com.tisstp.exgradle.demo.api.swag.controllers;
 
 import static com.google.common.collect.Maps.newHashMap;
 
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.tisstp.exgradle.demo.api.type.Category;
+import com.tisstp.exgradle.demo.api.swag.type.Category;
 import io.swagger.annotations.Api;
 import springfox.documentation.annotations.ApiIgnore;
 

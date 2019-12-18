@@ -26,7 +26,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  */
 @Configuration
 @EnableSwagger2
-@ComponentScan("com.tisstp.exgradle.demo.api.controllers")
+@ComponentScan("com.tisstp.exgradle.demo.api.swag.controllers")
 public class SwaggerConfig {
 
   @Bean
@@ -34,6 +34,7 @@ public class SwaggerConfig {
     return new Docket(DocumentationType.SWAGGER_2)
       .apiInfo(apiInfo())
       .select()
+      .apis(apis())
       .build();
   }
 
@@ -87,52 +88,5 @@ public class SwaggerConfig {
         .version("0.0.1")
         .build();
   }
-
-//  @Bean
-//  public Docket petApi() {
-//    return new Docket(DocumentationType.SWAGGER_2)
-//        .groupName("full-petstore-api")
-//        .apiInfo(apiInfo())
-//        .select()
-//        .paths(petstorePaths())
-//        .build()
-//        .securitySchemes(newArrayList(oauth()))
-//        .securityContexts(newArrayList(securityContext()))
-//        ;
-//  }
-
-//  @Bean
-//  public SecurityScheme oauth() {
-//    return new OAuthBuilder()
-//        .name("petstore_auth")
-//        .grantTypes(grantTypes())
-//        .scopes(scopes())
-//        .build();
-//  }
-
-//  @Bean
-//  public SecurityContext securityContext() {
-//    AuthorizationScope readScope = new AuthorizationScope("read:pets", "read your pets");
-//    AuthorizationScope[] scopes = new AuthorizationScope[1];
-//    scopes[0] = readScope;
-//    SecurityReference securityReference = SecurityReference.builder()
-//        .reference("petstore_auth")
-//        .scopes(scopes)
-//        .build();
-//
-//    return SecurityContext.builder()
-//        .securityReferences(newArrayList(securityReference))
-//        .forPaths(ant("/api/pet.*"))
-//        .build();
-//  }
-
-//  private Predicate<String> petstorePaths() {
-//    return PathSelectors.any();
-//    return or(
-//        regex("/api/pet.*"),
-//        regex("/api/user.*"),
-//        regex("/api/store.*")
-//    );
-//  }
 
 }
