@@ -4,6 +4,9 @@ build/
 !**/src/main/**
 !**/src/test/**
 
+# profile on local
+src/main/resources/application-local.yml
+
 ### STS ###
 .apt_generated
 .classpath

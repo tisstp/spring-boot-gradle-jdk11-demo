@@ -1,0 +1,9 @@
+spring:
+  profiles: local
+  datasource:
+    url:
+    driver-class-name:
+    username:
+    password:
+  jpa:
+    database-platform:
