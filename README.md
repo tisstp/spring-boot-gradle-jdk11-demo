@@ -7,3 +7,6 @@ my example
  has a fully featured builder, Automate your logging variables, and much more.
 * [springfox Swagger](http://springfox.github.io/springfox/docs/current/) The Springfox suite of java libraries are all 
 about automating the generation of machine and human readable specifications for JSON APIs.
+
+## Test Dependencies
+* []()
