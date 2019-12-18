@@ -1,4 +1,4 @@
-package com.tisstp.exgradle.demo.api.controller;
+package com.tisstp.exgradle.demo.api.controllers.swag;
 
 import static com.google.common.collect.Maps.newHashMap;
 

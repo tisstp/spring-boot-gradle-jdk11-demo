@@ -5,12 +5,14 @@ import static com.google.common.base.Predicates.or;
 import static springfox.documentation.builders.PathSelectors.regex;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 import com.google.common.base.Predicate;
 import io.swagger.annotations.Api;
 import springfox.documentation.RequestHandler;
 import springfox.documentation.builders.ApiInfoBuilder;
+import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
@@ -24,15 +26,36 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  */
 @Configuration
 @EnableSwagger2
+@ComponentScan("com.tisstp.exgradle.demo.api.controllers")
 public class SwaggerConfig {
 
   @Bean
-  public Docket api() {
+  public Docket defaultApi() {
     return new Docket(DocumentationType.SWAGGER_2)
+      .apiInfo(apiInfo())
+      .select()
+      .build();
+  }
+
+  @Bean
+  public Docket categoryApi() {
+    return new Docket(DocumentationType.SWAGGER_2)
+        .groupName("category-api")
         .apiInfo(apiInfo())
         .select()
         .apis(apis())
         .paths(paths())
+        .build();
+  }
+
+  @Bean
+  public Docket multipartApi() {
+    return new Docket(DocumentationType.SWAGGER_2)
+        .groupName("multipart-api")
+        .apiInfo(apiInfo())
+        .select()
+        .apis(apis())
+        .paths(multipartPaths())
         .build();
   }
 
@@ -46,6 +69,10 @@ public class SwaggerConfig {
         regex("/category"),
         regex("/categories")
     );
+  }
+
+  private Predicate<String> multipartPaths() {
+    return PathSelectors.regex("/upload.*");
   }
 
 

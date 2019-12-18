@@ -1,4 +1,4 @@
-package com.tisstp.exgradle.demo.api.controller;
+package com.tisstp.exgradle.demo.api.controllers.swag;
 
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
